@@ -1,1 +1,75 @@
-# Terraform Rohit Project
+# terraform-rohit.tf
+
+This Terraform project provisions a complete AWS network infrastructure in the **`us-west-1`** region.
+
+## 🌐 AWS Infrastructure Components
+
+This project sets up the following:
+
+- ✅ VPC in `us-west-1`
+- ✅ Public and Private Subnets
+- ✅ Internet Gateway (IGW)
+- ✅ NAT Gateway (for private subnet internet access)
+- ✅ Elastic IP for NAT
+- ✅ Route Tables and Route Table Associations
+- ✅ Security Groups for EC2 and other resources
+- ✅ Network ACLs (NACLs) for public and private subnets
+- ✅ Subnet Route Table Associations
+
+---
+
+## 🏗️ Terraform Structure
+
+terraform-rohit.tf
+This Terraform project provisions a complete AWS network infrastructure in the
+us-west-1 region.
+AWS Infrastructure Components
+This project sets up the following:
+- VPC in us-west-1
+- Public and Private Subnets
+- Internet Gateway (IGW)
+- NAT Gateway (for private subnet internet access)
+- Elastic IP for NAT
+- Route Tables and Route Table Associations
+- Security Groups for EC2 and other resources
+- Network ACLs (NACLs) for public and private subnets
+- Subnet Route Table Associations
+Terraform Structure
+terraform-rohit.tf/
+├── main.tf # Main resources (VPC, subnets, IGW, NAT, RTs, etc.)
+├── variables.tf # All variable declarations
+├── outputs.tf # Output values (e.g. VPC ID, Subnet IDs)
+├── README.md # Project documentation
+--------------------------------------------------------------------------------------------------------------------------------------------------
+How to Use
+1. Clone the Repository
+ git clone https://github.com/Rohitvarma123/terraform-rohit.tf.git
+ cd terraform-rohit.tf
+2. Initialize Terraform
+ terraform init
+3. Review the Plan
+ terraform plan
+5. Apply the Infrastructure
+ terraform apply
+Prerequisites
+- Terraform installed (v1.0 or later)
+- AWS CLI configured (aws configure)
+- An AWS IAM user with sufficient permissions
+Key Terraform Resources Used
+Resource - Description
+aws_vpc - Creates VPC
+aws_subnet - Creates public/private subnets
+aws_internet_gateway - IGW for public subnet access
+aws_nat_gateway - NAT for private subnet internet
+aws_route_table - Separate route tables per subnet
+aws_route - Routes to IGW/NAT
+aws_security_group - Security groups for traffic control
+aws_network_acl - NACLs for subnet-level firewall rules
+Cleanup Resources
+To delete all created infrastructure:
+ terraform destroy
+Author
+Rohit Varma
+GitHub: https://github.com/Rohitvarma123
+License
+MIT License © 2025 Rohit Varma
